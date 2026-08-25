@@ -3,6 +3,14 @@
    Blazor-specific selectors (#blazor-error-ui, .blazor-error-boundary,
    .loading-progress) have been stripped out. */
 
+:root {
+    --lobby-coral: #ff6b57;
+    --lobby-yellow: #ffd447;
+    --lobby-teal: #17bebb;
+    --lobby-ink: #111827;
+    --lobby-paper: #fff7ef;
+}
+
 html,
 body {
     height: 100%;
@@ -12,14 +20,6 @@ body {
 body {
     font-family: system-ui, -apple-system, sans-serif;
     -webkit-tap-highlight-color: transparent;
-}
-
-:root {
-    --lobby-coral: #ff6b57;
-    --lobby-yellow: #ffd447;
-    --lobby-teal: #17bebb;
-    --lobby-ink: #111827;
-    --lobby-paper: #fff7ef;
 }
 
 /* ── lobby: carnaval cinético ────────────────────────────────────── */
@@ -568,6 +568,7 @@ button:focus-visible {
     }
     to {
         opacity: 1;
+        transform: rotate(var(--lobby-rotation, 0deg));
     }
 }
 

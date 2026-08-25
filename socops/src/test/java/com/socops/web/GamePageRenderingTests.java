@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.hamcrest.Matchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -25,11 +26,11 @@ class GamePageRenderingTests {
     void lobbyPageIncludesRequiredLaunchElements() throws Exception {
         MvcResult result = mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("id=\"lobbyView\"")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("id=\"welcomeTitle\"")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("onclick=\"launchGame()\"")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("How the round moves")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("Board preview")))
+                .andExpect(content().string(containsString("id=\"lobbyView\"")))
+                .andExpect(content().string(containsString("id=\"welcomeTitle\"")))
+                .andExpect(content().string(containsString("onclick=\"launchGame()\"")))
+                .andExpect(content().string(containsString("How the round moves")))
+                .andExpect(content().string(containsString("Board preview")))
                 .andReturn();
 
         String markup = result.getResponse().getContentAsString();
