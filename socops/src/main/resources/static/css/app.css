@@ -163,6 +163,165 @@ button:disabled { cursor: default; }
 
 .min-h-\[60px\] { min-height: 60px; }
 
+/* ── lobby: carnaval de jogos ───────────────────────────────────── */
+.lobby-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(247, 197, 60, 0.28), transparent 45%),
+        radial-gradient(circle at 85% 82%, rgba(20, 184, 166, 0.24), transparent 48%),
+        #f8f5ea;
+}
+
+.lobby-shell {
+    width: 100%;
+    max-width: 66rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.lobby-preview,
+.lobby-content {
+    background-color: #fffdf5;
+    border: 2px solid #262626;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 24px rgba(37, 30, 23, 0.14);
+    padding: 1rem;
+}
+
+.lobby-preview {
+    position: relative;
+    background-image:
+        repeating-linear-gradient(
+            -45deg,
+            rgba(243, 123, 92, 0.08) 0,
+            rgba(243, 123, 92, 0.08) 9px,
+            rgba(255, 255, 255, 0) 9px,
+            rgba(255, 255, 255, 0) 18px
+        );
+}
+
+.lobby-flags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.lobby-flag {
+    width: 1rem;
+    height: 1rem;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.lobby-flag:nth-child(1) { background-color: #f37b5c; }
+.lobby-flag:nth-child(2) { background-color: #f7c53c; }
+.lobby-flag:nth-child(3) { background-color: #14b8a6; }
+.lobby-flag:nth-child(4) { background-color: #f37b5c; }
+.lobby-flag:nth-child(5) { background-color: #f7c53c; }
+
+.lobby-kicker {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #12423c;
+}
+
+.lobby-stamp {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    transform: rotate(-8deg);
+    border: 2px solid #f37b5c;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f37b5c;
+    background-color: rgba(255, 253, 245, 0.9);
+}
+
+.lobby-mini-board {
+    border: 2px solid #262626;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #fff;
+}
+
+.lobby-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.3rem;
+}
+
+.lobby-mini-cell {
+    aspect-ratio: 1 / 1;
+    min-height: 3.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    border: 1px solid #b6b7bf;
+    border-radius: 0.3rem;
+    background-color: #fffdf8;
+    color: #1f2937;
+    text-align: center;
+    font-size: 0.57rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.lobby-mini-hit {
+    background-color: rgba(243, 123, 92, 0.2);
+    border-color: #f37b5c;
+}
+
+.lobby-mini-free {
+    background-color: rgba(20, 184, 166, 0.2);
+    border-color: #0f766e;
+    font-weight: 700;
+}
+
+.lobby-steps {
+    margin: 0 0 1.5rem;
+    padding-left: 1.1rem;
+    color: #1f2937;
+    font-size: 0.875rem;
+    line-height: 1.35;
+}
+
+.lobby-steps li + li { margin-top: 0.45rem; }
+
+.lobby-cta {
+    background-color: #0f8c8a;
+    border: 2px solid #0b6665;
+}
+
+.lobby-cta:hover {
+    background-color: #0b7473;
+}
+
+.lobby-cta:focus-visible {
+    outline: 3px solid #f7c53c;
+    outline-offset: 3px;
+}
+
+@media (min-width: 960px) {
+    .lobby-shell {
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+        align-items: center;
+        gap: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lobby-stamp {
+        transform: none;
+    }
+}
+
 /* ── keyframes ─────────────────────────────────────────────────── */
 @keyframes bounce {
     0%, 100% {
