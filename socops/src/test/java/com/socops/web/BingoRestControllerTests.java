@@ -27,6 +27,7 @@ class BingoRestControllerTests {
                 .andExpect(content().string(containsString("id=\"welcomeTitle\"")))
                 .andExpect(content().string(containsString("onclick=\"launchGame()\"")))
                 .andExpect(content().string(containsString("Start a New Round")))
+                .andExpect(content().string(containsString("type=\"button\"")))
                 .andExpect(content().string(containsString("aria-labelledby=\"welcomeTitle\"")))
                 .andExpect(content().string(containsString("lobby-mini-grid")));
     }

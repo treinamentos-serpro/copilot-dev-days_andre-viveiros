@@ -491,9 +491,6 @@ button:disabled { cursor: default; }
     .transition-all,
     .transition-colors,
     .animate-\[bounce_0\.5s_ease-out\],
-    .lobby-preview-column,
-    .lobby-poster,
-    .lobby-ribbon,
     .lobby-confetti-piece {
         animation: none !important;
         transition-duration: 0.01ms !important;
